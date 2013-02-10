@@ -24,21 +24,23 @@ Theoretical support even for IE5/6, as well as the general approach is all based
 
 May not work well with any method that attempts to get IE7/IE8 to respond to media queries.
 
-		Youtube markup:
+
+##Markup
+
+###Youtube markup:
 		<figure class="intrinsic">
 			<a href="//www.youtube.com/watch?v=rjx1-otbBLg&fs=1&rel=0">
 				<figcaption>Lord of the Rings 2</figcaption>
 			</a>
 		</figure>
 
-
-		Vimeo markup:
+###Vimeo markup:
 		<figure class="intrinsic">
 			<a href="//player.vimeo.com/video/40301492?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff">
 				<figcaption>April</figcaption>
 			</a>
 		</figure>	
 
-If you want the video thumbnails to load by default, add style="background-image:url(/full/path/to/thumbnail/image)" and the css class "videoBgImgOn" to the <a> tag.
+If you wanted the video thumbnails to load by default, you'd add style="background-image:url(/full/path/to/thumbnail/image)" and the css class "videoBgImgOn" to the <a> tag.
 
-If you want alternate content for the background image, but still want it to be loaded conditionally (i.e., not by default at desktop widths), then add the data class data-video-img-fallback="/full/path/to/thumbnail/image" to the <a> tag.
+If you wanted to control the thumbnail image, but still want it to be loaded conditionally (i.e., not by default at desktop widths), then add the data class data-video-img-fallback="/full/path/to/thumbnail/image" to the <a> tag.
