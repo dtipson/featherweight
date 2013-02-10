@@ -10,15 +10,23 @@ Responsibly responsive, ratio-scaled video embeds with extremely low-weight, mob
 2. Give mobile video embeds intelligible, consistent, & recognizable styling as playable video content, making them look and work as much like a real iframe player as possible.
 3. Provide useful video content descriptions for screen-readers.
 4. Keep desktop styling and functionality consistent with what users expect, with a fluid but properly scaled layout that's already baked into the css on page load, even though the video embed content itself is being loaded asynchronously.
+5. Make sure the solution isn't itself anywhere near as heavy as even a single video iframe embed. :)
 
 ##Approach:
 Standardized HTML markup, a js library, and a css mixin are all built work together
 
-##Requirements: 
-	-jQuery 1.6 or later:
-	-enquire.js: 
+##Requirements:
+	
+###Javascript
+	-jQuery 1.7 or later: http://jquery.com/
+	-enquire.js: http://wicky.nillia.ms/enquire.js/
+	-matchMedia polyfill
 
 Optional: Modernizr/yepnope to conditionally preload a polyfill for matchMedia in browsers that don't support it (primarily IE9: IE8 and IE7 will fallback to desktop regardless)
+
+###CSS
+	-normalize.css/normalize.scss
+	-SASS
 
 Theoretical support even for IE5/6, as well as the general approach is all based on: http://alistapart.com/article/creating-intrinsic-ratios-for-video 
 
@@ -26,6 +34,8 @@ May not work well with any method that attempts to get IE7/IE8 to respond to med
 
 
 ##Markup
+
+Using SASS, you'd define the base class that controls the behavior, in this case "intrinsic."  All the rest of the markup is either central to the css/javascript behavior for this approach.
 
 ###Youtube markup:
 		<figure class="intrinsic">
