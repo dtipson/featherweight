@@ -74,7 +74,10 @@
 		background-position: 0 -10px;
 		&.loaded{
 			background-image:none;
-		}			
+			&:after{
+				display:none;
+			}
+		}		
 		&:before{
 			content:'';
 			border-radius:10px;

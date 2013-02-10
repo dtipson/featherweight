@@ -95,8 +95,8 @@
 			nonyt = $el.data('nonyt'),
 			slug = $el.data('slug'),
 			ops = $el.data('ops')||{};
-
-		$wraps.find('a iframe').remove().removeClass('loaded'); //needs to just stop them playing, not destroy them... hmmm
-		$el.prepend(videoString(slug,nonyt,$.extend(ops,{autoplay:1})));
+			
+		$wraps.find('a').removeClass('loaded').find('iframe').remove(); //needs to just stop them playing, not destroy them... hmmm
+		$el.addClass('loaded').prepend(videoString(slug,nonyt,$.extend(ops,{autoplay:1})));
 	});
 }(jQuery));
