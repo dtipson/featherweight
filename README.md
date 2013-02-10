@@ -15,7 +15,10 @@ Responsibly responsive, ratio-scaled video embeds with extremely low-weight, mob
 Standardized HTML markup, a js library, and a css mixin are all built work together
 
 ##Requirements: 
-enquire.js, along with Modernizr/yepnope to conditionally preload a polyfill for matchMedia in browsers that don't support it (primarily IE9: IE8 and IE7 will fallback to desktop)
+	-jQuery 1.6 or later:
+	-enquire.js: 
+
+Optional: Modernizr/yepnope to conditionally preload a polyfill for matchMedia in browsers that don't support it (primarily IE9: IE8 and IE7 will fallback to desktop regardless)
 
 Theoretical support even for IE5/6, as well as the general approach is all based on: http://alistapart.com/article/creating-intrinsic-ratios-for-video 
 
