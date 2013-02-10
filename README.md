@@ -31,7 +31,7 @@ Optional: Modernizr/yepnope could be used to conditionally preload a polyfill fo
 	-normalize.css/normalize.scss
 	-SASS
 
-Theoretical support even for IE5/6, as well as the general approach is all based on: http://alistapart.com/article/creating-intrinsic-ratios-for-video 
+Theoretically, this approach should work even on IE5/6, as the general approach it's is all based on did: http://alistapart.com/article/creating-intrinsic-ratios-for-video 
 
 This approach may not work well with any method that attempts to get IE7/IE8 to respond to media queries.
 
@@ -63,3 +63,9 @@ Using SASS, you'd define the base class that controls the behavior, in this case
 If you wanted the video thumbnails to load by default, you'd add style="background-image:url(/full/path/to/thumbnail/image)" and the css class "videoBgImgOn" to the <a> tag.
 
 If you wanted to control the thumbnail image, but still want it to be loaded conditionally (i.e., not by default at desktop widths), then add the data class data-video-img-fallback="/full/path/to/thumbnail/image" to the <a> tag.
+
+##What's still Missing
+
+1. Making this more of an extensible plugin than a list of custom methods
+2. adding methods to rescan and add thumbnails and/or videos that are dynamically added to the page.
+3. Reducing the size further
