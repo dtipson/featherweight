@@ -549,12 +549,8 @@ table {
 .intrinsic a.loaded {
   background-image: none !important;
 }
-.intrinsic a.loaded:after {
+.intrinsic a.loaded:after, .intrinsic a.loaded:before {
   display: none;
-}
-.intrinsic a.loaded:before {
-  width: 40px;
-  background: rgba(0, 0, 0, 0.1);
 }
 .intrinsic a:before {
   content: '';
