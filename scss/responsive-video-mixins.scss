@@ -1,0 +1,114 @@
+
+
+@mixin ratioScale($paddingPercentage: 56.25%, $extraChrome: false, $reallyoldIE: false){
+	position:relative;
+	height:0;
+	padding-bottom:$paddingPercentage;
+	@if($extraChrome){ padding-top:$extraChrome; }
+	a,div,object,embed,iframe{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100% !important; //undo any styling added by silly height/width attributes
+		height:100% !important; //undo any styling added by silly height/width attributes
+	}	
+	@if($reallyoldIE){
+		* html & {
+			margin-bottom: 45px;
+			margin-bot\tom: 0;
+		}		
+	}
+}
+
+@mixin ratio-wide-screen{
+	@include ratioScale(56.62%, null, 500px);
+}
+@mixin ratio-four-by-three{
+	@include ratioScale(75%, null, true);
+}
+%ratio-chrome-25{
+	padding-top:25px;
+}
+%ratio-chrome-35{
+	padding-top:35px;
+}
+
+@mixin abs-psuedo-frill($posleft: 0, $postop: 0){
+	content: "";
+	position: absolute;
+	left: $posleft;
+	top:$postop;
+}
+
+@mixin simple-gradient($opacity){
+	background-image: -moz-linear-gradient(bottom,rgba(0,0,0,$opacity) 0,rgba(255,255,255,$opacity) 100%);
+	background-image: -o-linear-gradient(bottom,rgba(0,0,0,$opacity) 0,rgba(255,255,255,$opacity) 100%);
+	background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0,rgba(0,0,0,$opacity)),color-stop(1,rgba(255,255,255,$opacity)));
+	background-image: -webkit-linear-gradient(bottom,rgba(0,0,0,$opacity) 0,rgba(255,255,255,$opacity) 100%);
+	background-image: -ms-linear-gradient(bottom,rgba(0,0,0,$opacity) 0,rgba(255,255,255,$opacity) 100%);
+	background-image: linear-gradient(bottom,rgba(0,0,0,$opacity) 0,rgba(255,255,255,$opacity) 100%);
+}
+
+@mixin ratio-scaled-fallback-content($fallbackContent: 700px){
+	figcaption,&:before, &:after{
+		z-index:1;
+	}
+	div,object,embed,iframe {
+		z-index:3;
+	}	
+	@media (max-width: $fallbackContent - 1){
+		:target {
+			div,object,embed,iframe{
+				display:block;
+			}
+		}		
+	}
+	a {
+		display:block;
+		overflow:hidden;
+		background:black;
+		text-decoration:none;
+		background-color:black;
+		background-size:cover;
+		background-repeat:no-repeat;
+		background-position: 0 -10px;
+		&.loaded{
+			background-image:none;
+		}			
+		&:before{
+			content:'';
+			border-radius:10px;
+			width:60px;
+			height:40px;
+			background:rgba(0,0,0,0.8);
+			@include simple-gradient(0.3);
+			position:absolute;
+			top:50%;
+			left:50%;
+			margin-left:-25px;
+			margin-top:-25px;
+		}
+		&:hover:before {
+			background-color:rgba(200,0,0,0.8);
+		}
+		&:after{
+			@include abs-psuedo-frill(50%,50%);
+			border-bottom: 10px solid transparent;
+			border-left: 16px solid white;
+			border-top: 10px solid transparent;
+			margin-top:-15px;
+			margin-left:-2px;
+		}
+	}
+	figcaption {
+		display:block;
+		padding:5px;
+		margin:0;
+		color:white;
+		background:rgba(0,0,0,0.8);
+		font-size:90%;
+		position:absolute;
+		bottom:0;
+		width:100%;
+	}
+}
