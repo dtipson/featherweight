@@ -1,5 +1,5 @@
 
-
+/*the basic method, without fallback: basically a SASS version of this http://alistapart.com/article/creating-intrinsic-ratios-for-video */
 @mixin ratioScale($paddingPercentage: 56.25%, $extraChrome: false, $reallyoldIE: false){
 	position:relative;
 	height:0;
@@ -108,7 +108,7 @@
 		background:rgba(0,0,0,0.8);
 		font-size:90%;
 		position:absolute;
-		bottom:0;
+		top:0;
 		width:100%;
 	}
 }

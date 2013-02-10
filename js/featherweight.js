@@ -21,7 +21,7 @@
 				(nonyt)?
 					('https://player.vimeo.com/video/'+slug+'?'+$.param(ops)):
 					('https://www.youtube.com/embed/'+slug+'?'+$.param(ops))
-		)+'" style="background:black;" frameborder="0" allowfullscreen allowtransparency="true"></iframe>';
+		)+'" style="background:black;visibility:hidden;" onload="this.style.visibility=\'visible\';" frameborder="0" allowfullscreen allowtransparency="true"></iframe>';
 	}
 	
 	function vidProcess($el){
