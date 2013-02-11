@@ -30,9 +30,9 @@
         </ul>
       </header>
       <section>
-        <h3>Demo example #1</h3>
-		<p>One youtube video, one vimeo video.</p>
-		<p>You're not going to see much unless you either 1. load the browser on a mobile device or 2. reduce the desktop window browser size to under 700 pixels AND refresh the page.</p>
+        <h3>Demo example 2</h3>
+		<p>Lota of videos</p>
+		<p>Again, compare the loads at mobile widths vs. desktop widths. Because a lot of player components are cached/re-used, more 4 videos isn't anywhere near 4 times the filesize, but it can still hurt mobile performance as it tries to deal with all those requests, plus initializing code and layout in all those extra iframes.</p>
 
 
 	<div style="margin:10px auto;">		
@@ -44,16 +44,32 @@
 	</div>
 	<div style="margin:10px auto;">		
 		<figure class="intrinsic">
+			<a href="https://www.youtube.com/watch?v=rjx1-otbBLg=1&rel=0">
+				<figcaption>Lord of the Rings Remix 2</figcaption>
+			</a>
+		</figure>
+	</div>
+	<div style="margin:10px auto;">		
+		<figure class="intrinsic">
+			<a href="https://www.youtube.com/watch?v=lTZw-WY4T10=1&rel=0">
+				<figcaption>Lord of the Rings Remix 3</figcaption>
+			</a>
+		</figure>
+	</div>	
+	<div style="margin:10px auto;">		
+		<figure class="intrinsic">
 			<a href="https://player.vimeo.com/video/5606758?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff">
 				<figcaption>Kuroshio Sea</figcaption>
 			</a>
 		</figure>	
-	</div>
-	
-	<p>The best way to appreciate the benefits of this approach is to reduce your browser size to less than 700pixels wide, watch the network tab of your web inspector, and hit refresh. When the page is loaded at a mobile width, you should see far fewer files downloaded and a much smaller overall filesize vs a load at desktop width: around 14 requests and 56KB downloaded.</p>
-	<p>Now, still watching inspector, drag/increase the size of your browser window to +700pixels or more. As the full video iframes load, you should see things jump up to around 40 requests and around 203KB (it would be more like around 37/165KB if you were just loading the desktop view directly).</p>
-	<p>Fewer initial file requests on load means that mobile devices, especially those with less than optimal connections, can avoid one of the more costly (in terms of time) operations: lots of extra DNS lookups and upstream requests for files. The 50KB vs. 200KB difference is actually less important, in terms of speed, but it's still a big usability and conceptual win: basically, you shouldn't be loading content that your users haven't yet requested. Wait until they say they want to load a video to load all that video player code and data.</p>
-	<p>See <a href="more.html">a second demo</a> for the impact of even more videos on page loads.</p>
+	</div>	
+	<div style="margin:10px auto;">		
+		<figure class="intrinsic">
+			<a href="https://player.vimeo.com/video/40301492?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff">
+				<figcaption>April</figcaption>
+			</a>
+		</figure>	
+	</div>	
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/dtipson">dtipson</a></p>
