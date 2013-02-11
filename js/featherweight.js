@@ -64,7 +64,7 @@
 			ops = $el.data('ops');
 			autono = (autono)?0:1;
 			$el.prepend(videoString(slug, nonyt, $.extend(ops,{autoplay:autono})));
-			if (!nonyt && (!ops.autohide || (!!ops.autohide && ops.autohide!==1))){
+			if (!nonyt && (!ops.autohide || (!!ops.autohide && ops.autohide!=="1"))){
 				$el.parent('figure').addClass('fw-ratio-chrome-25');
 			}
 			console.log(slug, ops);
