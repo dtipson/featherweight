@@ -22,13 +22,16 @@ Standardized HTML markup, a small js library, and a few sassy css mixins that ar
 	
 ###Javascript
 [jQuery 1.7 or later](http://jquery.com/)
+
 [enquire.js](http://wicky.nillia.ms/enquire.js/)
+
 [matchMedia polyfill](https://github.com/paulirish/matchMedia.js/)
 
 Optional: Modernizr/yepnope could be used to conditionally preload a polyfill for matchMedia in browsers that don't support it (primarily IE9: IE8 and IE7 will fallback to desktop regardless) but the polyfill is so tiny that it's included by default.
 
 ###CSS
 [normalize.css/normalize.scss](http://necolas.github.com/normalize.css/)
+
 [SASS](http://sass-lang.com/)
 
 I suppose you could do this in LESS pretty easily too. Should be pretty easy to read the SASS code and port it over if you feel like it.
