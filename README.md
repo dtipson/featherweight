@@ -71,6 +71,7 @@ If, however, you want video thumbnails to load by default, you'd add style="back
 
 #What's still Missing: I.E. TODOS PRE PRIMTEIME
 
+1. Making it easier to decide on the overall project breakpoint (currently defaulting to 480px, but you'd have to change it in at least two places to change it). Ideally, the media queries would be using something other than width, but it's the best solution for now.
 1. Making this more of an extensible jquery plugin than a list of random custom functions all glommed together in an IIFE that happens to reply on jQuery
 2. When loaded on a Windows desktop at tiny width, youtube complains that the video width is too small. WHAT? People still use windows machines with all their insane limitations and errors?  Oh, they do. Oh, crap.
 3. Are aspect ratios not QUITE right? Really? We'll have to tweak that. Looks like it's a subpixel off in some cases though, which can't easily be corrected.  We may have to set the extra padding values for various player bar heights in the plugin instead of leaving them to users to determine. Mehsauce.

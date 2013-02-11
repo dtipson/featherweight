@@ -11,5 +11,5 @@ box-sizing: border-box;
 .intrinsic {
 	@extend %ratio-chrome-25;
 	@include ratio-wide-screen;
-	@include ratio-scaled-fallback-content(700px);
+	@include ratio-scaled-fallback-content(480px);
 }

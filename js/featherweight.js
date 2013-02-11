@@ -4,7 +4,7 @@
 
 (function($){
 	var $wraps = $('.intrinsic'),
-		breakWidth = 700,
+		breakWidth = 480,
 		//hash = window.location.hash.replace('#',''),
 		c=0;
 
