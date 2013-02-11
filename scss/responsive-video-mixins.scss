@@ -25,7 +25,7 @@ $defaultfallbackContent: 480px;
 /*available ratios*/
 
 @mixin ratio-wide-screen{
-	@include ratioScale(56.62%);
+	@include ratioScale(56.25%);
 }
 @mixin ratio-four-by-three{
 	@include ratioScale(75%);
