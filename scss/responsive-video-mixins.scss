@@ -139,6 +139,9 @@ $defaultfallbackContent: 480px;
 	.fw-ratio-chrome-30{
 		padding-top:30px;
 	}
+	.fw-ratio-unknown{
+		@extend .fw-ratio-chrome-30;
+	}
 	
 	@media (max-width: $defaultfallbackContent){
 		/* if unset and mobile, probably has autohide*/
