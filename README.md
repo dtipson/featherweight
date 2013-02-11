@@ -21,30 +21,32 @@ Standardized HTML markup, a small js library, and a few sassy css mixins that ar
 ##The Requirements:
 	
 ###Javascript
-	-jQuery 1.7 or later: http://jquery.com/
-	-enquire.js: http://wicky.nillia.ms/enquire.js/
-	-matchMedia polyfill
+	-[jQuery 1.7 or later](http://jquery.com/)
+	-[enquire.js](http://wicky.nillia.ms/enquire.js/)
+	-[matchMedia polyfill](https://github.com/paulirish/matchMedia.js/)
 
 Optional: Modernizr/yepnope could be used to conditionally preload a polyfill for matchMedia in browsers that don't support it (primarily IE9: IE8 and IE7 will fallback to desktop regardless) but the polyfill is so tiny that it's included by default.
 
 ###CSS
-	-normalize.css/normalize.scss
-	-SASS
+	-[normalize.css/normalize.scss](http://necolas.github.com/normalize.css/)
+	-[SASS](http://sass-lang.com/)
 
-Theoretically, this approach should work even on IE5/6, as the general approach it's is all based on did: http://alistapart.com/article/creating-intrinsic-ratios-for-video 
+I suppose you could do this in LESS pretty easily too. Should be pretty easy to read the SASS code and port it over if you feel like it.
 
-This approach may not work well with any method that attempts to get IE7/IE8 to respond to media queries.
+Also, theoretically, this whole approach should work even on IE5/6, as the general approach it's is all based on did: http://alistapart.com/article/creating-intrinsic-ratios-for-video 
+
+However, this approach may or may not work well with any method that attempts to get IE7/IE8 to respond to media queries. I don't know. But, seriously, why are you trying to do that anyway?  Why work so hard to make incredibly slow browsers capable of doing things that nearly nobody using them ever tries to do, anyhow? Give em a desktop view, or enough CSS to get a working mobile view, and be done with it.
 
 ##The Setup
 
-1. Include normalize.css in your SASS project.
-2. Import the mixin to your SASS project.
+1. Include some form of normalize.css in your SASS project, because reasons.
+2. Import the core mixin to your SASS project.
 3. Define the css class you want to use and apply the proper mix of mixins
-4. Include the js.
+4. Include the js, modifying it if you've chosen a different core classname other than "intrinsic." In the meantime, I'll try to come up with better core classnames.
 
 ##The Markup
 
-Using SASS, you'd define the base class that controls the behavior, in this case "intrinsic."  All the rest of the markup is either central to the css/javascript behavior for this approach.
+Using SASS, you'd define the base class that controls the behavior, in this case "intrinsic."  All the rest of the markup is pretty either central to the css/javascript behavior for this approach, so you'd probably better stick to it.
 
 ###Youtube markup:
 		<figure class="intrinsic">
@@ -60,13 +62,13 @@ Using SASS, you'd define the base class that controls the behavior, in this case
 			</a>
 		</figure>	
 
-If you wanted the video thumbnails to load by default, you'd add style="background-image:url(/full/path/to/thumbnail/image)" and the css class "videoBgImgOn" to the <a> tag.
+If you wanted to control the exact thumbnail image, but still want it to be loaded conditionally (i.e., not by default at desktop widths), then add the data class data-video-img-fallback="/full/path/to/thumbnail/image" to the <a> tag.
 
-If you wanted to control the thumbnail image, but still want it to be loaded conditionally (i.e., not by default at desktop widths), then add the data class data-video-img-fallback="/full/path/to/thumbnail/image" to the <a> tag.
+If, however, you want video thumbnails to load by default, you'd add style="background-image:url(/full/path/to/thumbnail/image)" and the css class "videoBgImgOn" to the <a> tag and be done with it. Those thumbnails will load on desktop where they aren't really needed, sure, but they'd also load as soon as possible on mobile if you care about such things.
 
-#What's still Missing: I.E. TODO
+#What's still Missing: I.E. TODOS PRE PRIMTEIME
 
-1. Making this more of an extensible plugin than a list of custom methods
+1. Making this more of an extensible jquery plugin than a list of random custom functions all glommed together in an IIFE that happens to reply on jQuery
 2. When loaded on a Windows desktop at tiny width, youtube complains that the video width is too small. WHAT? People still use windows machines with all their insane limitations and errors?  Oh, they do. Oh, crap.
 3. Are aspect ratios not QUITE right? Really? We'll have to tweak that. Looks like it's a subpixel off in some cases though, which can't easily be corrected.  We may have to set the extra padding values for various player bar heights in the plugin instead of leaving them to users to determine. Mehsauce.
 4. #hash-based target:css is nice in theory: in practice, it puts the video at the _very_ top of the page, which many mobile browsers have decided is a place where they wish to cover up actual content with random nonsense when they feel like it. And the usual, already quite hacky, workarounds won't work here (as they require messing with then re-correcting margins and other things that are bad general approaches). So, it's probably better to abandon this approach and use window.scrolling instead, which is more fine-tunable. Thanks, horribly awful UX collaboration between mobile browser designers and HTML5/W3C folks!
