@@ -64,13 +64,14 @@ If you wanted the video thumbnails to load by default, you'd add style="backgrou
 
 If you wanted to control the thumbnail image, but still want it to be loaded conditionally (i.e., not by default at desktop widths), then add the data class data-video-img-fallback="/full/path/to/thumbnail/image" to the <a> tag.
 
-##What's still Missing
+#What's still Missing
 
 1. Making this more of an extensible plugin than a list of custom methods
-2. #hash-based target:css is nice in theory: in practice, it puts the video at the _very_ top of the page, which many mobile browsers have decided is a place where they wish to cover up actual content with random nonsense when they feel like it. And the usual, already quite hacky, workarounds won't work here (as they require messing with then re-correcting margins and other things that are bad general approaches). So, it's probably better to abandon this approach and use window.scrolling instead, which is more fine-tunable. Thanks, horribly awful UX collaboration between mobile browser designers and HTML5/W3C folks!
-2. Standardizing classes, figuring out a good final name for the plugin
-3. adding optional methods to rescan and add thumbnails and/or videos that are dynamically added to the page.
-4. Vimeo videos aren't autoplaying on mobile devices, despite the autoplay spec. It works on mobile widths on desktop, but Android phones are requiring an extra, second click on the loaded play button to start the video
-5. Reducing the filesize further
-6. Currently, the mobile version behavior when watching a video is to remove all the other iframe videos on the page, reverting them to the thumbnail view.  This is because this is the only reliable way to stop them from playing.  By and large for most use cases, this is acceptable behavior.  If the embeds used the javascript api, a more elegant solution would be possible (pausing already loaded videos so that they can be played from where they left off if the user so desires), but that's a much bigger project to tackle, and is even a little trickier on the vimeo side.
+2. Are aspect ratios not QUITE right? Really? We'll have to tweak that. Looks like it's a subpixel off in some cases though, which can't easily be corrected.
+3. #hash-based target:css is nice in theory: in practice, it puts the video at the _very_ top of the page, which many mobile browsers have decided is a place where they wish to cover up actual content with random nonsense when they feel like it. And the usual, already quite hacky, workarounds won't work here (as they require messing with then re-correcting margins and other things that are bad general approaches). So, it's probably better to abandon this approach and use window.scrolling instead, which is more fine-tunable. Thanks, horribly awful UX collaboration between mobile browser designers and HTML5/W3C folks!
+4. Standardizing classes, figuring out a good final name for the plugin
+5. adding optional methods to rescan and add thumbnails and/or videos that are dynamically added to the page.
+6. Vimeo videos aren't autoplaying on mobile devices, despite the autoplay spec. It works on mobile widths on desktop, but Android phones are requiring an extra, second click on the loaded play button to start the video
+7. Reducing the filesize further
+7. Currently, the mobile version behavior when watching a video is to remove all the other iframe videos on the page, reverting them to the thumbnail view.  This is because this is the only reliable way to stop them from playing.  By and large for most use cases, this is acceptable behavior.  If the embeds used the javascript api, a more elegant solution would be possible (pausing already loaded videos so that they can be played from where they left off if the user so desires), but that's a much bigger project to tackle, and is even a little trickier on the vimeo side.
 7. Better Loading notifications on mobile, where the load of the iframe can take a non-trivial amount of time.
