@@ -6,10 +6,3 @@
 -webkit-box-sizing: border-box;
 box-sizing: border-box;
 }
-
-/*demo examples*/
-.intrinsic {
-	@extend %ratio-chrome-25;
-	@include ratio-wide-screen;
-	@include ratio-scaled-fallback-content(480px);
-}

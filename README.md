@@ -52,14 +52,14 @@ However, this approach may or may not work well with any method that attempts to
 Using SASS, you'd define the base class that controls the behavior, in this case "intrinsic."  All the rest of the markup is pretty either central to the css/javascript behavior for this approach, so you'd probably better stick to it.
 
 ###Youtube markup:
-		<figure class="intrinsic">
+		<figure class="fw-intrinsic">
 			<a href="//www.youtube.com/watch?v=rjx1-otbBLg&fs=1&rel=0">
 				<figcaption>Lord of the Rings 2</figcaption>
 			</a>
 		</figure>
 
 ###Vimeo markup:
-		<figure class="intrinsic">
+		<figure class="fw-intrinsic">
 			<a href="//player.vimeo.com/video/40301492?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff">
 				<figcaption>April</figcaption>
 			</a>

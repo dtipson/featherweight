@@ -20,18 +20,15 @@
 	}
 }
 
+/*available ratios*/
+
 @mixin ratio-wide-screen{
 	@include ratioScale(56.62%);
 }
 @mixin ratio-four-by-three{
 	@include ratioScale(75%);
 }
-%ratio-chrome-25{
-	padding-top:25px;
-}
-%ratio-chrome-35{
-	padding-top:35px;
-}
+
 
 @mixin abs-psuedo-frill($posleft: 0, $postop: 0){
 	content: "";
@@ -127,3 +124,19 @@
 		}			
 	}	
 }
+
+
+/*core classes*/
+.fw-intrinsic {
+	@include ratio-wide-screen;
+	@include ratio-scaled-fallback-content(480px);
+}
+
+	/* extra heights when the player bar needs to be accounted for*/
+	.fw-ratio-chrome-25{
+		padding-top:25px;
+	}
+	.fw-ratio-chrome-35{
+	padding-top:35px;
+	}
+	

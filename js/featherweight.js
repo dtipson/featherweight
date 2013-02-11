@@ -3,7 +3,7 @@
 */
 
 (function($){
-	var $wraps = $('.intrinsic'),
+	var $wraps = $('.fw-intrinsic'),
 		breakWidth = 480,
 		//hash = window.location.hash.replace('#',''),
 		c=0;
@@ -64,6 +64,9 @@
 			ops = $el.data('ops');
 			autono = (autono)?0:1;
 			$el.prepend(videoString(slug, nonyt, $.extend(ops,{autoplay:autono})));
+			if (!nonyt && (!ops.autohide || ops.autohide!==1)){
+				$el.parent('figure').addClass('fw-ratio-chrome-25');
+			}
 	}
 	
 	$wraps.find('a').each(function(){
