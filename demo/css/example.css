@@ -531,11 +531,6 @@ table {
 .intrinsic div, .intrinsic object, .intrinsic embed, .intrinsic iframe {
   z-index: 3;
 }
-@media (max-width: 699px) {
-  .intrinsic :target div, .intrinsic :target object, .intrinsic :target embed, .intrinsic :target iframe {
-    display: block;
-  }
-}
 .intrinsic a {
   display: block;
   overflow: hidden;
@@ -594,4 +589,16 @@ table {
   position: absolute;
   top: 0;
   width: 100%;
+}
+@media (max-width: 699px) {
+  .intrinsic :target div, .intrinsic :target object, .intrinsic :target embed, .intrinsic :target iframe {
+    display: block;
+  }
+  .intrinsic.loaded:before {
+    display: block;
+    content: 'Loading...';
+    color: white;
+    width: 80px;
+    background: rgba(255, 255, 255, 0.2);
+  }
 }

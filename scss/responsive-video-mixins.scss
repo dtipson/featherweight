@@ -55,13 +55,6 @@
 	}
 	div,object,embed,iframe {
 		z-index:3;
-	}	
-	@media (max-width: $fallbackContent - 1){
-		:target {
-			div,object,embed,iframe{
-				display:block;
-			}
-		}		
 	}
 	a {
 		display:block;
@@ -114,4 +107,20 @@
 		top:0;
 		width:100%;
 	}
+	@media (max-width: $fallbackContent - 1){
+		:target {
+			div,object,embed,iframe{
+				display:block;
+			}
+		}
+		&.loaded{
+			&:before{
+				display:block;
+				content:'Loading...';
+				color:white;
+				width:80px;
+				background:rgba(255,255,255,0.2);
+			}
+		}			
+	}	
 }
