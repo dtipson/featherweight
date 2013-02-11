@@ -67,6 +67,9 @@ If you wanted to control the thumbnail image, but still want it to be loaded con
 ##What's still Missing
 
 1. Making this more of an extensible plugin than a list of custom methods
-2. adding methods to rescan and add thumbnails and/or videos that are dynamically added to the page.
-3. Reducing the size further
-4. Currently, the mobile version behavior when watching a video is to remove all the other iframe videos on the page, reverting them to the thumbnail view.  This is because this is the only reliable way to stop them from playing.  If the embeds used the javascript api, a more elegant solution would be possible, but that's a much bigger project to tackle, and is even a little trickier on the vimeo side.
+2. Standardizing classes, name of plugin
+3. adding optional methods to rescan and add thumbnails and/or videos that are dynamically added to the page.
+4. Vimeo videos aren't autoplaying on mobile devices, despite the spec.
+5. Reducing the size further
+6. Currently, the mobile version behavior when watching a video is to remove all the other iframe videos on the page, reverting them to the thumbnail view.  This is because this is the only reliable way to stop them from playing.  If the embeds used the javascript api, a more elegant solution would be possible, but that's a much bigger project to tackle, and is even a little trickier on the vimeo side.
+5. Vimeo videos aren't autoplaying on mobile devices, despite the spec.
