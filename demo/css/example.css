@@ -594,7 +594,7 @@ table {
   .intrinsic :target div, .intrinsic :target object, .intrinsic :target embed, .intrinsic :target iframe {
     display: block;
   }
-  .intrinsic.loaded:before {
+  .intrinsic a.loaded:before {
     display: block;
     content: 'Loading...';
     color: white;

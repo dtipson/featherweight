@@ -113,7 +113,7 @@
 				display:block;
 			}
 		}
-		&.loaded{
+		a.loaded{
 			&:before{
 				display:block;
 				content:'Loading...';

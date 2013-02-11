@@ -1,2 +1,3 @@
 codekit-config.json
 .DS_Store
+/css/*
