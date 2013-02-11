@@ -67,6 +67,7 @@
 			if (!nonyt && (ops.autohide && ops.autohide!==1)){
 				$el.parent('figure').addClass('fw-ratio-chrome-25');
 			}
+			console.log(slug, ops);
 	}
 	
 	$wraps.find('a').each(function(){
