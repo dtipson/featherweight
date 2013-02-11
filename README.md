@@ -67,6 +67,7 @@ If you wanted to control the thumbnail image, but still want it to be loaded con
 ##What's still Missing
 
 1. Making this more of an extensible plugin than a list of custom methods
+2. #hash-based target:css is nice in theory: in practice, it puts the video at the _very_ top of the page, which many mobile browsers have decided is a place where they wish to cover up actual content with random nonsense when they feel like it. And the usual, already quite hacky, workarounds won't work here (as they require messing with then re-correcting margins and other things that are bad general approaches). So, it's probably better to abandon this approach and use window.scrolling instead, which is more fine-tunable. Thanks, horribly awful UX collaboration between mobile browser designers and HTML5/W3C folks!
 2. Standardizing classes, figuring out a good final name for the plugin
 3. adding optional methods to rescan and add thumbnails and/or videos that are dynamically added to the page.
 4. Vimeo videos aren't autoplaying on mobile devices, despite the autoplay spec. It works on mobile widths on desktop, but Android phones are requiring an extra, second click on the loaded play button to start the video
