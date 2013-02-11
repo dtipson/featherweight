@@ -76,14 +76,14 @@
 		});
 	}
 	
-	enquire.register("screen and (min-width: "+breakWidth+"px)", {
+	enquire.register("screen and (min-width: "+(breakWidth+1)+"px)", {
 		match: function(){
 			$wraps.find('a').not('.loaded').each(function(){
 				vidLoad($(this).addClass('loaded'), true);
 			});
 		}
 	}, true);
-	enquire.register("screen and (max-width: "+(breakWidth-1)+"px)", {
+	enquire.register("screen and (max-width: "+(breakWidth)+"px)", {
 		match: function(){
 			videoThumbs();
 		}

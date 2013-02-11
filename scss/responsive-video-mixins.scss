@@ -21,10 +21,10 @@
 }
 
 @mixin ratio-wide-screen{
-	@include ratioScale(56.62%, null, 500px);
+	@include ratioScale(56.62%);
 }
 @mixin ratio-four-by-three{
-	@include ratioScale(75%, null, true);
+	@include ratioScale(75%);
 }
 %ratio-chrome-25{
 	padding-top:25px;
@@ -107,7 +107,7 @@
 		top:0;
 		width:100%;
 	}
-	@media (max-width: $fallbackContent - 1){
+	@media (max-width: $fallbackContent){
 		:target {
 			div,object,embed,iframe{
 				display:block;
