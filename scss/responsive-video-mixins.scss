@@ -1,4 +1,6 @@
 
+$defaultfallbackContent: 480px;
+
 /*the basic method, without fallback: basically a SASS version of this http://alistapart.com/article/creating-intrinsic-ratios-for-video */
 @mixin ratioScale($paddingPercentage: 56.25%, $extraChrome: false, $reallyoldIE: false){
 	position:relative;
@@ -46,7 +48,7 @@
 	background-image: linear-gradient(bottom,rgba(0,0,0,$opacity) 0,rgba(255,255,255,$opacity) 100%);
 }
 
-@mixin ratio-scaled-fallback-content($fallbackContent: 480px){
+@mixin ratio-scaled-fallback-content($fallbackContent: $defaultfallbackContent){
 	figcaption,&:before, &:after{
 		z-index:1;
 	}
@@ -129,14 +131,22 @@
 /*core classes*/
 .fw-intrinsic {
 	@include ratio-wide-screen;
-	@include ratio-scaled-fallback-content(480px);
+	@include ratio-scaled-fallback-content($defaultfallbackContent);
 }
 
-	/* extra heights when the player bar needs to be accounted for*/
-	.fw-ratio-chrome-25{
-		padding-top:25px;
-	}
-	.fw-ratio-chrome-35{
-	padding-top:35px;
+/* extra player bar heights*/
+
+	.fw-ratio-chrome-30{
+		padding-top:30px;
 	}
 	
+	@media (max-width: $defaultfallbackContent){
+		/* if unset and mobile, probably has autohide*/
+		.fw-ratio-unknown{
+			padding-top:30px;
+		}
+	}
+	
+	.fw-ratio-nochrome{
+		padding-top:0 !important;
+	}

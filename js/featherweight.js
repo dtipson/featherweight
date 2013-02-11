@@ -59,13 +59,20 @@
 	}
 	
 	function vidLoad($el,autono){
-		var slug = $el.data('slug'),
+		var parent = $el.parent('figure'), 
+			slug = $el.data('slug'),
 			nonyt = $el.data('nonyt'),
 			ops = $el.data('ops');
 			autono = (autono)?0:1;
 			$el.prepend(videoString(slug, nonyt, $.extend(ops,{autoplay:autono})));
-			if (!nonyt && (!ops.autohide || (!!ops.autohide && ops.autohide!=="1"))){
-				$el.parent('figure').addClass('fw-ratio-chrome-25');
+			if (!nonyt && !ops.autohide){
+				parent.addClass('fw-ratio-unknown');
+			}
+			else if (!nonyt && (!!ops.autohide && ops.autohide!=="1")){
+				parent.addClass('fw-ratio-chrome-30');
+			}
+			else {
+				parent.addClass('fw-ratio-nochrome')
 			}
 			console.log(slug, ops);
 	}
