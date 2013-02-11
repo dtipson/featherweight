@@ -59,7 +59,7 @@
 	}
 	
 	function vidLoad($el,autono){
-		var parent = $el.parent('figure'), 
+		var parent = $el.parent('figure'),
 			slug = $el.data('slug'),
 			nonyt = $el.data('nonyt'),
 			ops = $el.data('ops');
@@ -72,7 +72,7 @@
 				parent.addClass('fw-ratio-chrome-30');
 			}
 			else {
-				parent.addClass('fw-ratio-nochrome')
+				parent.addClass('fw-ratio-nochrome');
 			}
 			console.log(slug, ops);
 	}
