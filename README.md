@@ -67,7 +67,7 @@ If you wanted to control the thumbnail image, but still want it to be loaded con
 #What's still Missing
 
 1. Making this more of an extensible plugin than a list of custom methods
-2. Are aspect ratios not QUITE right? Really? We'll have to tweak that. Looks like it's a subpixel off in some cases though, which can't easily be corrected.
+2. Are aspect ratios not QUITE right? Really? We'll have to tweak that. Looks like it's a subpixel off in some cases though, which can't easily be corrected.  We may have to set the extra padding values for various player bar heights in the plugin instead of leaving them to users to determine. Mehsauce.
 3. #hash-based target:css is nice in theory: in practice, it puts the video at the _very_ top of the page, which many mobile browsers have decided is a place where they wish to cover up actual content with random nonsense when they feel like it. And the usual, already quite hacky, workarounds won't work here (as they require messing with then re-correcting margins and other things that are bad general approaches). So, it's probably better to abandon this approach and use window.scrolling instead, which is more fine-tunable. Thanks, horribly awful UX collaboration between mobile browser designers and HTML5/W3C folks!
 4. Standardizing classes, figuring out a good final name for the plugin
 5. adding optional methods to rescan and add thumbnails and/or videos that are dynamically added to the page.
