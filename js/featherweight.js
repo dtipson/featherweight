@@ -90,7 +90,8 @@
 	}, true);
 	enquire.listen(500);
 	
-	$wraps.on('click','a',function(){
+	$wraps.on('click','a',function(e){
+		e.preventDefault();
 		var $el = $(this),
 			nonyt = $el.data('nonyt'),
 			slug = $el.data('slug'),
