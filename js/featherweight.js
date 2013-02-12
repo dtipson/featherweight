@@ -3,7 +3,8 @@
 */
 
 (function($){
-	var $wraps = $('.fw-intrinsic'),
+	var $html = $('html'),
+		$wraps = $('.fw-intrinsic'),
 		breakWidth = 480,
 		//hash = window.location.hash.replace('#',''),
 		c=0;
@@ -111,4 +112,6 @@
 		$wraps.find('a').removeClass('loaded').find('iframe').remove(); //needs to just stop them playing, not destroy them... hmmm
 		$el.addClass('loaded').prepend(videoString(slug,nonyt,$.extend(ops,{autoplay:1})));
 	});
+	
+	$html.addClass('fw-framework-loaded');
 }(jQuery));

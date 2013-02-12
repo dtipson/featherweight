@@ -70,29 +70,31 @@ $defaultfallbackContent: 480px;
 				display:none;
 			}
 		}
-		&:before{
-			content:'';
-			border-radius:10px;
-			width:60px;
-			height:40px;
-			background:rgba(0,0,0,0.8);
-			@include simple-gradient(0.3);
-			position:absolute;
-			top:50%;
-			left:50%;
-			margin-left:-25px;
-			margin-top:-25px;
-		}
-		&:hover:before {
-			background-color:rgba(200,0,0,0.8);
-		}
-		&:after{
-			@include abs-psuedo-frill(50%,50%);
-			border-bottom: 10px solid transparent;
-			border-left: 16px solid white;
-			border-top: 10px solid transparent;
-			margin-top:-15px;
-			margin-left:-2px;
+		.fw-framework-loaded & {
+			&:before{
+				content:'';
+				border-radius:10px;
+				width:60px;
+				height:40px;
+				background:rgba(0,0,0,0.8);
+				@include simple-gradient(0.3);
+				position:absolute;
+				top:50%;
+				left:50%;
+				margin-left:-25px;
+				margin-top:-25px;
+			}
+			&:hover:before {
+				background-color:rgba(200,0,0,0.8);
+			}
+			&:after{
+				@include abs-psuedo-frill(50%,50%);
+				border-bottom: 10px solid transparent;
+				border-left: 16px solid white;
+				border-top: 10px solid transparent;
+				margin-top:-15px;
+				margin-left:-2px;
+			}
 		}
 	}
 	figcaption {
