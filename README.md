@@ -75,7 +75,7 @@ If, however, you want user-customized video thumbnails to load by default, you'd
 #What's still Missing: I.E. TODOS PRE V1.0 PRIMTEIME
 
 1. Making it easier to decide on the overall project breakpoint (currently defaulting to 480px, but you'd have to change it in at least two places to change it). Ideally, the media queries would be using something other than width, but it's the best solution for now. 
-2. Making this more of an extensible jquery plugin than a list of random custom functions all glommed together in an IIFE that happens to reply on jQuery
+2. Making this more of an extensible jquery plugin than a list of random custom functions all glommed together in an IIFE that happens to rely on jQuery
 2. When loaded on a Windows desktop at a very tiny width (even in chrome), youtube complains that the video width is "too small," even though this doesn't seem to bother macs or mobile devices, or even videos that are already playing at a very teensy size. WAT. 
 3. Aspect ratios are a little quirky on youtube videos because youtube has different autohide settings depending on whether the first load was mobile width or not (defaults to autohide on at some mobile widths, off at some desktop widths). Most of the time, autohide videos seem to be loading correctly at any given fixed width, but then acting wonky if you resize the window (and thus the player).
 6. adding optional methods to rescan and add thumbnails and/or videos that are dynamically added to the page.
