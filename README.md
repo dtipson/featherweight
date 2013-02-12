@@ -1,4 +1,4 @@
-featherweight
+featherweight v0.8
 =============
 
 Responsibly responsive, ratio-scaled video embeds with extremely low-weight, mobile-first-friendly markup.
@@ -17,6 +17,10 @@ Iframe video embeds, when loaded by default, can add a lot of initial weight to 
 ##The Approach:
 
 Standardized HTML markup, a small js library, and a few sassy css mixins that are all built work together.
+
+##What it does
+
+Using extremely light, but very HTML5-y, markup, it creates embeds that will function differently depending on the width of the browser: in mobile view (480px and below), it will load virtually nothing other than the video thumbnail (even that is optional), bypassing the normal weight of iframe video embeds, all the while looking and working like a responsive video from the perspective of end-users.  Desktop loads will function normally, even if you're on something horrible like IE7.  If you have javascript entirely turned off, the worst that will happen is that you'll have a link to a video. Which, of course, you can't play because vimeo and youtube pretty much require javascript to be turned on anyhow. So, no big loss.
 
 ##The Requirements:
 	
@@ -44,8 +48,7 @@ However, this approach may or may not work well with any method that attempts to
 
 1. Include some form of normalize.css in your SASS project, because reasons.
 2. Import the core mixin to your SASS project.
-3. Define the css class you want to use and apply the proper mix of mixins
-4. Include the js, modifying it if you've chosen a different core classname other than "intrinsic." In the meantime, I'll try to come up with better core classnames.
+3. Include the js any page you've used the markup on
 
 ##The Markup
 
@@ -72,7 +75,8 @@ If, however, you want video thumbnails to load by default, you'd add style="back
 #What's still Missing: I.E. TODOS PRE PRIMTEIME
 
 1. Making it easier to decide on the overall project breakpoint (currently defaulting to 480px, but you'd have to change it in at least two places to change it). Ideally, the media queries would be using something other than width, but it's the best solution for now.
-1. Making this more of an extensible jquery plugin than a list of random custom functions all glommed together in an IIFE that happens to reply on jQuery
+2. preventing the faux "play" button from appearing until AFTER the library has loaded, to prevent people from thinking that they can press play before the play handler has even been bound.  
+2. Making this more of an extensible jquery plugin than a list of random custom functions all glommed together in an IIFE that happens to reply on jQuery
 2. When loaded on a Windows desktop at tiny width, youtube complains that the video width is too small. WHAT? People still use windows machines with all their insane limitations and errors?  Oh, they do. Oh, crap.
 3. Aspect ratios are a little quirky because youtube has different autohide settings depending on whether the first load was mobile width or not (defaults to autohide on at some mobile widths, off at some desktop widths). Easy solution would be to force auto-hiding on in all cases. Harder/messier solution would require guessing the breakpoint and scoping for that... which could break if youtube changes how they do things.
 4. #hash-based target:css is nice in theory: in practice, it puts the video at the _very_ top of the page, which many mobile browsers have decided is a place where they wish to cover up actual content with random nonsense when they feel like it. And the usual, already quite hacky, workarounds won't work here (as they require messing with then re-correcting margins and other things that are bad general approaches). So, it's probably better to abandon this approach and use window.scrolling instead, which is more fine-tunable. Thanks, horribly awful UX collaboration between mobile browser designers and HTML5/W3C folks!
