@@ -114,7 +114,7 @@ $defaultfallbackContent: 480px;
 				display:block;
 			}
 		}
-		a.loaded{
+		.fw-framework-loaded a.loaded{
 			&:before{
 				display:block;
 				content:'Loading...';
