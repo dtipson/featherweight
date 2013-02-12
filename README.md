@@ -76,11 +76,11 @@ If, however, you want video thumbnails to load by default, you'd add style="back
 
 1. Making it easier to decide on the overall project breakpoint (currently defaulting to 480px, but you'd have to change it in at least two places to change it). Ideally, the media queries would be using something other than width, but it's the best solution for now. 
 2. Making this more of an extensible jquery plugin than a list of random custom functions all glommed together in an IIFE that happens to reply on jQuery
-2. When loaded on a Windows desktop at tiny width (even in chrome), youtube complains that the video width is too small. WHAT? People still use windows machines with all their insane limitations and errors?  Oh, they do. Oh, crap.
+2. When loaded on a Windows desktop at a very tiny width (even in chrome), youtube complains that the video width is "too small," even though this doesn't seem to bother macs or mobile devices, or even videos that are already playing at a very teensy size. WAT. 
 3. Aspect ratios are a little quirky on youtube videos because youtube has different autohide settings depending on whether the first load was mobile width or not (defaults to autohide on at some mobile widths, off at some desktop widths). Most of the time, autohide videos seem to be loading correctly at any given fixed width, but then acting wonky if you resize the window (and thus the player).
 6. adding optional methods to rescan and add thumbnails and/or videos that are dynamically added to the page.
 7. Vimeo videos aren't autoplaying on mobile devices, or on windows, despite the supposed support for an autoplay spec. It works on mobile widths on Mac desktop, but Android phones and Windows machines are requiring an extra, second click on the loaded play button to start the video. NICE. And apparently, vimeo is either doing this [on purpose](http://vimeo.com/help/faq/embedding#autoplay) or is running into some problem with autoplay that doesn't affect Youtube's player.
-8. Reducing the filesize further
+8. Reducing the overall filesize even further (gzipped js is under 3KB, and the compiled CSS is around 2KB).
 9. Currently, the mobile version behavior when watching a video is to remove all the other iframe videos on the page, reverting them to the thumbnail view.  This is because this is the only truly reliable way to stop them from playing.  By and large for most use cases, this is acceptable behavior.  If the embeds used the javascript api, a more elegant solution would be possible (pausing already loaded videos so that they can be played from where they left off if the user so desires), but that's a much bigger project to tackle, would have a much larger initial filesize, and is even a little trickier on the vimeo side.
 
 ##Removed:
