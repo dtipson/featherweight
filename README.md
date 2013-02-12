@@ -68,9 +68,9 @@ Using SASS, you'd define the base class that controls the behavior, in this case
 			</a>
 		</figure>	
 
-If you wanted to control the exact thumbnail image, but still wanted it to be loaded conditionally (i.e., not by default at desktop widths), then add the data class data-video-img-fallback="/full/path/to/thumbnail/image" to the <a> tag.
+If you wanted to control the exact thumbnail image, but still wanted it to be loaded conditionally (i.e., not by default at desktop widths), then add the data class data-video-img-fallback="/full/path/to/thumbnail/image" to the &lt;a&gt; tag.
 
-If, however, you want user-customized video thumbnails to load by default, you'd add style="background-image:url(/full/path/to/thumbnail/image)" and the css class "videoBgImgOn" to the <a> tag and be done with it. Those thumbnails will load on desktop where they aren't really needed, sure, but they'd also load as soon as possible on mobile if you care about such things.
+If, however, you want user-customized video thumbnails to load by default, you'd add style="background-image:url(/full/path/to/thumbnail/image)" and the css class "videoBgImgOn" to the &lt;a&gt; tag and be done with it. Those thumbnails will load on desktop where they aren't really needed, sure, but they'd also load as soon as possible on mobile if you care about such things.
 
 #What's still Missing: I.E. TODOS PRE V1.0 PRIMTEIME
 
