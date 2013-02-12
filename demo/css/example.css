@@ -578,9 +578,6 @@ table {
   width: 100%;
 }
 @media (max-width: 480px) {
-  .fw-intrinsic :target div, .fw-intrinsic :target object, .fw-intrinsic :target embed, .fw-intrinsic :target iframe {
-    display: block;
-  }
   .fw-framework-loaded .fw-intrinsic a.loaded:before {
     display: block;
     content: 'Loading...';

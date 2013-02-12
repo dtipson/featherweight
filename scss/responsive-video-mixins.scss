@@ -109,11 +109,6 @@ $defaultfallbackContent: 480px;
 		width:100%;
 	}
 	@media (max-width: $fallbackContent){
-		:target {
-			div,object,embed,iframe{
-				display:block;
-			}
-		}
 		.fw-framework-loaded & a.loaded{
 			&:before{
 				display:block;
