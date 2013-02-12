@@ -58,7 +58,7 @@
 	<p>The best way to appreciate the benefits of this approach is to reduce your desktop browser size to less than 480pixels wide as above, but this time watch the network tab of your web inspector, and hit refresh. When the page is loaded at a mobile width, you should see far fewer files downloaded and a much smaller overall filesize vs a load at desktop width: around 14 requests and 56KB downloaded.</p>
 	<p>Now, still watching inspector, drag/increase the size of your browser window to 481pixels or more. As the full video iframes load, you should see things jump up to around 40 requests and around 203KB (it would actually be more like around 37/165KB if you were just loading the desktop view directly, as this wouldn't require loading thumbnails).</p>
 	<p>Fewer initial file requests on load means that on mobile devices, especially those with less than optimal connections, can avoid one of the more costly (in terms of time) operations: lots of extra DNS lookups and upstream requests for files. The 50KB vs. 200KB difference is actually less important, in terms of speed, but it's still a big usability and conceptual win: basically, you shouldn't be loading content that your users haven't yet requested. Wait until they say they want to load a video to load all that video player code and data.</p>
-		<p><a href="index.html">Demo#1</a><a href="more.html">Demo#1 (More)</a><a href="iframe.html">Demo#3 (traditional iframes, no fw)</a></p>	
+		<p><a href="index.html">Demo#1</a> - <a href="more.html">Demo#1 (More)</a> - <a href="iframe.html">Demo#3 (traditional iframes, no fw)</a></p>	
 	<p>See <a href="more.html">a second demo</a> for the impact of even more videos on page loads.</p>
       </section>
       <footer>
