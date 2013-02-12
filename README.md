@@ -46,7 +46,7 @@ However, this approach may or may not work well with any method that attempts to
 
 ##The Setup
 
-1. Include some form of normalize.css in your SASS project, because reasons.
+1. Include some form of normalize.css in your SASS project, because reasons
 2. Import the core mixin to your SASS project, or just include the contents of default.css in your css
 3. Include the featherweight.min.js file on any page you've used the markup on
 
@@ -54,14 +54,14 @@ However, this approach may or may not work well with any method that attempts to
 
 Using SASS, you'd define the base class that controls the behavior, in this case "intrinsic."  All the rest of the markup is pretty either central to the css/javascript behavior for this approach, so you'd probably better stick to it.
 
-###Youtube markup:
+###Youtube markup (use the [player's url parameters](https://developers.google.com/youtube/player_parameters#Parameters) to set your desired player options):
 		<figure class="fw-intrinsic">
 			<a href="//www.youtube.com/watch?v=rjx1-otbBLg&fs=1&rel=0">
 				<figcaption>Lord of the Rings 2</figcaption>
 			</a>
 		</figure>
 
-###Vimeo markup:
+###Vimeo markup(use the [player's url parameters](http://developer.vimeo.com/player/embedding) to set your desired player options  ) :
 		<figure class="fw-intrinsic">
 			<a href="//player.vimeo.com/video/40301492?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff">
 				<figcaption>April</figcaption>
