@@ -47,8 +47,8 @@ However, this approach may or may not work well with any method that attempts to
 ##The Setup
 
 1. Include some form of normalize.css in your SASS project, because reasons.
-2. Import the core mixin to your SASS project.
-3. Include the js any page you've used the markup on
+2. Import the core mixin to your SASS project, or just include the contents of default.css in your css
+3. Include the featherweight.min.js file on any page you've used the markup on
 
 ##The Markup
 
