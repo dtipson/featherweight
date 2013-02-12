@@ -72,7 +72,7 @@ If you wanted to control the exact thumbnail image, but still want it to be load
 
 If, however, you want video thumbnails to load by default, you'd add style="background-image:url(/full/path/to/thumbnail/image)" and the css class "videoBgImgOn" to the <a> tag and be done with it. Those thumbnails will load on desktop where they aren't really needed, sure, but they'd also load as soon as possible on mobile if you care about such things.
 
-#What's still Missing: I.E. TODOS PRE PRIMTEIME
+#What's still Missing: I.E. TODOS PRE V1.0 PRIMTEIME
 
 1. Making it easier to decide on the overall project breakpoint (currently defaulting to 480px, but you'd have to change it in at least two places to change it). Ideally, the media queries would be using something other than width, but it's the best solution for now. 
 2. Making this more of an extensible jquery plugin than a list of random custom functions all glommed together in an IIFE that happens to reply on jQuery
